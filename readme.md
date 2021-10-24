@@ -26,3 +26,23 @@
 | But you are limited to expo ecosystem | Full flexibility: Integrate with any native code |
 
 We can switch from expo to React native CLI anytime
+
+# React Native Basics
+- There is no HTML and CSS in react native
+- ScrollView is better than View
+- [FlatList](https://reactnative.dev/docs/flatlist) is better than ScrollView
+```
+<FlatList
+    data={list}
+    keyExtractor={(item) => item.uid}
+    renderItem={(item, index) => (
+        <Text>{item.value}</Text>
+    )}
+ />
+```
+- Default display in RN is flex
+- Modal - `<Modal>`
+
+### Addinf font
+- npm i expo-font
+- 
