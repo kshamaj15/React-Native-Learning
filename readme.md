@@ -43,6 +43,17 @@ We can switch from expo to React native CLI anytime
 - Default display in RN is flex
 - Modal - `<Modal>`
 
-### Addinf font
-- npm i expo-font
-- 
+### Adding font
+```
+expo i expo-font 
+```
+cons
+
+### App loader component
+```
+expo install expo-app-loading
+```
+```
+import AppLoading from 'expo-app-loading';
+
+```
