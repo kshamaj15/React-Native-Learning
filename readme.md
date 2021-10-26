@@ -47,7 +47,17 @@ We can switch from expo to React native CLI anytime
 ```
 expo i expo-font 
 ```
-cons
+
+```
+import * as Font from 'expo-font';
+
+const loadFonts = () => {
+    return Font.loadAsync({
+      'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+      'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+    })
+}
+```
 
 ### App loader component
 ```
@@ -56,4 +66,40 @@ expo install expo-app-loading
 ```
 import AppLoading from 'expo-app-loading';
 
+<AppLoading startAsync={fontLoaded}
+    onFinish={() => setFontLoaded(true)}
+    onError={() => console.log('error')} 
+/>
+```
+## Add navigation 
+
+```
+npm install react-navigation;
+```
+### Installing dependencies into an Expo managed project​
+```
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+### install imp modules
+```
+npm i react-navigation-stack
+npm i react-navigation-tabs
+npm i react-navigation-drawer
+```
+
+```
+import { createStackNavigator, CreateAppContainer } from 'react-navigation-stack';
+
+import CatogoriesScreen from '../Screens/CategoriesScreen';
+import CatogoryMealsScreen from '../Screens/CategoryMealsScreen';
+import MealDetailsScreen from '../Screens/MealDetailsScreen';
+
+const MealNavigator = createStackNavigator({
+    categoryMeals: CatogoryMealsScreen,
+    categories: CatogoriesScreen,
+    MealDetails: MealDetailsScreen
+});
+
+export default CreateAppContainer(MealNavigator);
 ```
