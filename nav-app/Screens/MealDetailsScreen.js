@@ -15,6 +15,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center'
     }
+}, {
+    defaultNavigationOptions: {
+        
+    }
 });
+
+
 
 export default MealDetailsScreen;

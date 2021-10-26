@@ -28,14 +28,6 @@ export default function App() {
   return (
     <MealNavigator />
   )
-
-
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start workxxing on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
 }
 
 

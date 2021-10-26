@@ -129,3 +129,26 @@ props.navigation.popToTop() // only all screen
 props.navigation.goBack() // for all navigations
 props.navigation.replace('newroute')
 ```
+
+### Configuring header with navigation header options
+```
+CatogoriesScreen.navigationOptions = {
+    headerTitle: 'Meal Catagories',
+    headerStyle: {
+        backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
+    },
+    headerTintColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
+}
+```
+- navigationOptions could be object as well as function as per the requirement
+- for dynamic data, its should be a function
+
+```
+CategoryMealsScreen.navigationOptions = (navigationData) => {
+    const catId = navigationData.navigation.getParam('categoryId');
+    const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
+    return {
+        headerTitle: selectedCategory.title
+    }
+}
+```
