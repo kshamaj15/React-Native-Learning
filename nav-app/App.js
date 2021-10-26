@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
 
+import MealNavigator from './Navigation/MealNavigator';
+
 export default function App() {
 
   const loadFonts = () => {
@@ -24,12 +26,18 @@ export default function App() {
   }
 
   return (
+    <MealNavigator />
+  )
+
+
+  return (
     <View style={styles.container}>
       <Text>Open up App.js to start workxxing on your app!</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {

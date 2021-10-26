@@ -89,7 +89,8 @@ npm i react-navigation-drawer
 ```
 
 ```
-import { createStackNavigator, CreateAppContainer } from 'react-navigation-stack';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
 
 import CatogoriesScreen from '../Screens/CategoriesScreen';
 import CatogoryMealsScreen from '../Screens/CategoryMealsScreen';
@@ -101,5 +102,30 @@ const MealNavigator = createStackNavigator({
     MealDetails: MealDetailsScreen
 });
 
-export default CreateAppContainer(MealNavigator);
+export default createAppContainer(MealNavigator);
+```
+```
+import MealNavigator from './Navigation/MealNavigator';
+
+return (
+  <MealNavigator />
+)
+```
+### Navaigating between screen
+Navigation route pass props by default if they are not written in nested structure
+```
+props.navigation.navigate('RouteName')
+```
+or
+```
+props.navigation.navigate({routeName: 'RouteName'})
+```
+
+### other methods
+```
+props.navigation.push('RouteName')
+props.navigation.pop() // only used in stack navigation
+props.navigation.popToTop() // only all screen
+props.navigation.goBack() // for all navigations
+props.navigation.replace('newroute')
 ```
