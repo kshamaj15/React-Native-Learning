@@ -16,15 +16,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center'
     }
-}, {
-    defaultNavigationOptions: {
-        headerStyle: {
-            backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
-        },
-        headerTintColor: Platform.OS === 'android' ? Colors.primaryColor : 'white',
-        headerTitle: 'Meal Catagories'
-
-    }
 });
 
 

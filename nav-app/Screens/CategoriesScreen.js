@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, FlatList, Touchable, TouchableOpacity, Platform } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 
 import { CATEGORIES } from '../data/dummy-data';
-import Colors from '../constants/Colors';
+import CategoryGridTile from '../Comnponents/CategoryGridTile';
 
 const CatogoriesScreen = props => {
 
@@ -14,11 +14,11 @@ const CatogoriesScreen = props => {
 
     const rendorGridItems = (itemData) => {
         return (
-            <TouchableOpacity onPress={() => navigateToDetails(itemData)} style={styles.gridItem}>
-                <View>
-                    <Text>{itemData.item.title}</Text>
-                </View>
-            </TouchableOpacity>
+            <CategoryGridTile 
+                title={itemData.item.title} 
+                color={itemData.item.color}
+                onSelect={() => navigateToDetails(itemData)} 
+            />
         )
     }
 
@@ -40,11 +40,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignContent: 'center'
-    },
-    gridItem: {
-        flex: 1,
-        margin: 15,
-        height: 150
     }
 });
 

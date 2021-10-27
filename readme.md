@@ -152,3 +152,24 @@ CategoryMealsScreen.navigationOptions = (navigationData) => {
     }
 }
 ```
+
+### Default NavigationOptions
+```
+{
+    defaultNavigationOptions: {
+        headerStyle: {
+            backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
+        },
+        headerTintColor: Platform.OS === 'android' ? Colors.primaryColor : 'white',
+        headerTitle: 'Meal Catagories'
+    }
+}
+```
+### For better efficiency and performance
+```
+npm i react-native-screen
+```
+```
+import { enableScreens } from 'react-native-screen'; 
+enableScreens();
+```
