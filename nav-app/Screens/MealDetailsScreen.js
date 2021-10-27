@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
+import Colors from '../constants/Colors';
 
 const MealDetailsScreen = props => {
     return (
@@ -17,7 +18,12 @@ const styles = StyleSheet.create({
     }
 }, {
     defaultNavigationOptions: {
-        
+        headerStyle: {
+            backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
+        },
+        headerTintColor: Platform.OS === 'android' ? Colors.primaryColor : 'white',
+        headerTitle: 'Meal Catagories'
+
     }
 });
 

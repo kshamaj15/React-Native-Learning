@@ -1,18 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Button, FlatList, Touchable, TouchableOpacity, Platform } from 'react-native';
 
 import { CATEGORIES } from '../data/dummy-data';
 import Colors from '../constants/Colors';
 
 const CatogoriesScreen = props => {
-
-    useEffect(() => {
-        console.log('yes');
-    })
-
-    useEffect(() => {
-        console.log('yes');
-    })
 
     const navigateToDetails = (itemData) => {
         props.navigation.navigate('CategoryMeals', {
@@ -40,12 +32,7 @@ const CatogoriesScreen = props => {
 };
 
 CatogoriesScreen.navigationOptions = {
-    headerTitle: 'Meal Catagories',
-    headerStyle: {
-        backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
-    },
-    headerTintColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
-
+    headerTitle: 'Meal Catagories'
 }
 
 const styles = StyleSheet.create({
