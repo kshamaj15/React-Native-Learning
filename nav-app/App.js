@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import AppLoading from 'expo-app-loading';
-// import * as Font from 'expo';
-import { Font, AppLoading } from "expo";
+import AppLoading from 'expo-app-loading';
+import * as Font from 'expo-font';
+// import { Font, AppLoading } from "expo";
 import { enableScreens } from 'react-native-screens';
 
 enableScreens();
@@ -33,7 +33,6 @@ export default function App() {
     <MealNavigator />
   )
 }
-
 
 const styles = StyleSheet.create({
   container: {

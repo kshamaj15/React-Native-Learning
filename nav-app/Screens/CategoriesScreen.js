@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 
-import { CATEGORIES } from '../data/dummy-data';
+import { CATEGORIES, MEALS } from '../data/dummy-data';
 import CategoryGridTile from '../Comnponents/CategoryGridTile';
 
 const CatogoriesScreen = props => {
