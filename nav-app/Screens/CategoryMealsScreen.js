@@ -11,8 +11,8 @@ const CategoryMealsScreen = props => {
 
     const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
 
-    const openMealDetails = () => {
-        props.navigation.navigate('MealDetails')
+    const openMealDetails = (mealItem) => {
+        props.navigation.navigate('MealDetails', {mealId: mealItem.item.id});
     }
 
     const renderMealItem = (mealItem) => {
@@ -23,7 +23,7 @@ const CategoryMealsScreen = props => {
                 complexity={mealItem.item.complexity}
                 affordibility={mealItem.item.affordibility}
                 imageUrl={mealItem.item.imageUrl}
-                onSelected={openMealDetails}
+                onSelected={() => openMealDetails(mealItem)}
             />
         )
     }

@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     gridItem: {
         flex: 1,
         margin: 15,
+        elevation: 3,
         height: 150,
         borderRadius: 10,
         overflow: 'hidden'
@@ -41,7 +42,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 10,
-        elevation: 3,
         padding: 10,
         justifyContent: 'flex-end',
         alignItems: 'flex-end'

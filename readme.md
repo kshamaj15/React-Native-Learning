@@ -173,3 +173,31 @@ npm i react-native-screen
 import { enableScreens } from 'react-native-screen'; 
 enableScreens();
 ```
+
+### getting params
+```
+props.navigation.getParam('mealId');
+```
+
+## Adding Header Buttons
+```
+npm install --save react-navigation-header-buttons@6
+```
+```
+npm i @expo/vector-icons
+```
+```
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+
+import HeaderButton from '../Comnponents/HeaderButton';
+
+HeaderRight: (
+            <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+                <Item 
+                    title="favourite" 
+                    iconName="ios-star" 
+                    onPress={() => {console.log('markAsFav')}}
+                />
+            </HeaderButtons>
+        )
+```
