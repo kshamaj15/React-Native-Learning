@@ -9,14 +9,11 @@ import { Ionicons } from '@expo/vector-icons';
 import CatogoriesScreen from '../Screens/CategoriesScreen';
 import CatogoryMealsScreen from '../Screens/CategoryMealsScreen';
 import MealDetailsScreen from '../Screens/MealDetailsScreen';
-import FavScreen from '../Screens/FavScreen';
+import FavScreen from '../Screens/FavScreen'
 import Colors from '../constants/Colors';
 
-const MealNavigator = createStackNavigator({
-    Categories: CatogoriesScreen,
-    CategoryMeals: CatogoryMealsScreen,
-    MealDetails: MealDetailsScreen
-}, {
+
+const navOptions = {
     defaultNavigationOptions: {
         headerStyle: {
             backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : 'white'
@@ -24,7 +21,7 @@ const MealNavigator = createStackNavigator({
         headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor,
         headerTitle: 'Meal Catagories'
     }
-});
+}
 
 const tabScreenConfig = {
     Meals: {
@@ -40,7 +37,7 @@ const tabScreenConfig = {
         }
     },
     Fav: {
-        screen: FavScreen,
+        screen: FavNavigator,
         tabBarLabel: 'Favourite!',
         navigationOptions: {
             tabBarIcon: (tabInfo) => {
@@ -53,6 +50,17 @@ const tabScreenConfig = {
         }
     }
 }
+
+const MealNavigator = createStackNavigator({
+    Categories: CatogoriesScreen,
+    CategoryMeals: CatogoryMealsScreen,
+    MealDetails: MealDetailsScreen
+}, navOptions);
+
+const FavNavigator = createStackNavigator({
+    Favourite: FavScreen,
+    MealDetails: MealDetailsScreen
+}, navOptions)
 
 const MealFavTabNavigator = Platform.OS === 'android' ?
     createMaterialBottomTabNavigator(tabScreenConfig, {
