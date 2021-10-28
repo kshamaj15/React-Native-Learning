@@ -192,12 +192,76 @@ import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import HeaderButton from '../Comnponents/HeaderButton';
 
 HeaderRight: (
-            <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-                <Item 
-                    title="favourite" 
-                    iconName="ios-star" 
-                    onPress={() => {console.log('markAsFav')}}
-                />
-            </HeaderButtons>
-        )
+    <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <Item 
+            title="favourite" 
+            iconName="ios-star" 
+            onPress={() => {console.log('markAsFav')}}
+        />
+    </HeaderButtons>
+)
+```
+# Adding Tab Navigation
+```
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+
+const MealFavTabNavigator = createBottomTabNavigator({
+    Meals: MealNavigator,
+    Fav: FavScreen
+})
+```
+```
+
+const MealFavTabNavigator = createBottomTabNavigator({
+    Meals: {
+        screen: MealNavigator,
+        navigationOptions: {
+            tabBarIcon: (tabInfo) => {
+                return (
+                    <Ionicons name="ios-restaurant"
+                    size={25}
+                    color={tabInfo.tintColor} />
+                );
+            }
+        }
+    },
+    Fav: {
+        screen: FavScreen,
+        tabBarLabel: 'Favourite!',
+        navigationOptions: {
+            tabBarIcon: (tabInfo) => {
+                return (
+                    <Ionicons name="ios-star"
+                    size={25}
+                    color={tabInfo.tintColor} />
+                );
+            }
+        }
+    }
+},{
+    tabBarOptions: {
+        activeTintColor: Colors.primaryColor
+    }
+})
+```
+[More About Navigation Options](https://reactnavigation.org/docs/bottom-tab-navigator/)
+
+### Note:
+When defining a navigator, you can also add navigationOptions to it:
+```
+const SomeNavigator = createStackNavigator({
+    ScreenIdentifier: SomeScreen
+}, {
+    navigationOptions: {
+        // You can set options here!
+        // Please note: This is NOT defaultNavigationOptions!
+    }
+});
+```
+Don't mistake this for the defaultNavigationOptions which you could also set there (i.e. in the second argument you pass to createWhateverNavigator()).
+
+### Android Specific Icons
+```
+npm i react-navigation-material-bottom-tabs
+npm i react-native-paper
 ```
